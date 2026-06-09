@@ -1,0 +1,29 @@
+# Team Name - Team MEG
+
+* **Manikandan S**
+
+  * Phone: 9944694165
+  * Email: [mani1524.senthil@gmail.com](mailto:mani1524.senthil@gmail.com)
+  * Degree: B.TECH Information Technology
+  * College: VSB Engineering College, Karur
+
+* **Kadhir K G**
+
+  * Phone: 6374577987
+  * Email: [kadhirkg@gmail.com](mailto:kadhirkg@gmail.com)
+  * Degree: B.TECH Information Technology
+  * College: VSB Engineering College, Karur
+
+* **Nideesh Kumar A**
+
+  * Phone: 8122028175
+  * Email: [nideesharumugam2006@gmail.com](mailto:nideesharumugam2006@gmail.com)
+  * Degree: B.TECH Information Technology
+  * College: VSB Engineering College, Karur
+
+* **Nithish S**
+
+  * Phone: 9360255797
+  * Email: [nithishsivasamy07@gmail.com](mailto:nithishsivasamy07@gmail.com)
+  * Degree: B.E. Artificial Intelligence & Machine Learning
+  * College: VSB Engineering College, Karur
