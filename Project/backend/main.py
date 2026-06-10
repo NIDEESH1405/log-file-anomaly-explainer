@@ -22,6 +22,7 @@ Install the console script (after `pip install .`):
 
 from __future__ import annotations
 
+import sys
 import webbrowser
 from pathlib import Path
 from typing import Optional
@@ -33,9 +34,18 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.rule import Rule
 from rich.text import Text
 
-from log_parser import find_error_block
-from llm_explainer import explain_anomaly
-from report_generator import generate_report
+# ---------------------------------------------------------------------------
+# Ensure the project root is on sys.path so `backend.*` imports resolve
+# whether this script is run from project root or from backend/.
+# ---------------------------------------------------------------------------
+_BACKEND_DIR = Path(__file__).resolve().parent
+_PROJECT_ROOT = _BACKEND_DIR.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+from backend.log_parser import find_error_block
+from backend.llm_explainer import explain_anomaly
+from backend.report_generator import generate_report
 
 # ---------------------------------------------------------------------------
 # Typer app + Rich consoles
@@ -45,7 +55,7 @@ app = typer.Typer(
     name="log-anomaly",
     help=(
         "Detect anomalies in a log file and generate an AI-powered Markdown report.\n\n"
-        "Requires a running Ollama server unless --no-llm is passed."
+        "Requires GROQ_API_KEY environment variable unless --no-llm is passed."
     ),
     add_completion=False,
     rich_markup_mode="rich",
@@ -87,9 +97,9 @@ def analyse(
         readable=True,
     ),
     model: str = typer.Option(
-        "llama3.2:latest",
+        "llama-3.3-70b-versatile",
         "--model",
-        help="Ollama model tag for the LLM explanation.",
+        help="Groq model tag — e.g. llama-3.3-70b-versatile, mixtral-8x7b-32768.",
         show_default=True,
     ),
     output: str = typer.Option(

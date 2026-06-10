@@ -1,24 +1,16 @@
-# Python
+# backend/.gitignore
+
+# Python bytecode
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 *.so
-*.egg
-*.egg-info/
-dist/
-build/
-.eggs/
 
-# Virtual environments
+# Virtual environment (inside backend/)
 venv/
 .venv/
 env/
-.env/
-
-# Generated reports (don't commit outputs)
-*.md
-!README.md
 
 # Pytest / coverage
 .pytest_cache/
@@ -26,7 +18,7 @@ env/
 htmlcov/
 coverage.xml
 
-# Temp / editor files
+# Temporary / editor files
 *.tmp
 *.bak
 *.swp
@@ -35,7 +27,7 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Secrets / environment variables
+# Secrets
 .env
 *.env
 secrets.yaml
