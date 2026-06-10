@@ -24,15 +24,16 @@ import time
 from pathlib import Path
 from typing import Optional
 
+# _ENV_FILE is always defined so check_api_key() can reference it safely.
+_HERE         = Path(__file__).resolve()
+_PROJECT_ROOT = _HERE.parent.parent.parent
+_ENV_FILE     = _PROJECT_ROOT / ".env"
+
 try:
     from dotenv import load_dotenv
-    _HERE         = Path(__file__).resolve()
-    _PROJECT_ROOT = _HERE.parent.parent.parent
-    _ENV_FILE     = _PROJECT_ROOT / ".env"
     load_dotenv(dotenv_path=_ENV_FILE, override=False)
 except ImportError:
-    # python-dotenv not installed (should not happen — it is in requirements.txt).
-    # On Render, env vars are injected directly so this is fine.
+    # python-dotenv not installed — on Render, env vars are injected natively.
     pass
 
 from openai import (

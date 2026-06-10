@@ -1,0 +1,44 @@
+# Secrets — never commit
+.env
+*.env
+secrets.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+Project/backend/venv/
+
+# Runtime-generated files
+Project/database.db
+Project/*.db
+Project/uploads/
+Project/reports/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# Streamlit secrets
+Project/.streamlit/secrets.toml
