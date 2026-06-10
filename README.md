@@ -1,78 +1,165 @@
+
+<div align="center">
+
+```
+██╗      ██████╗  ██████╗     ███████╗██╗██╗     ███████╗
+██║     ██╔═══██╗██╔════╝     ██╔════╝██║██║     ██╔════╝
+██║     ██║   ██║██║  ███╗    █████╗  ██║██║     █████╗  
+██║     ██║   ██║██║   ██║    ██╔══╝  ██║██║     ██╔══╝  
+███████╗╚██████╔╝╚██████╔╝    ██║     ██║███████╗███████╗
+╚══════╝ ╚═════╝  ╚═════╝     ╚═╝     ╚═╝╚══════╝╚══════╝
+    █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ██╗     ██╗   ██╗    
+   ██╔══██╗████╗  ██║██╔═══██╗████╗ ████║██╔══██╗██║     ╚██╗ ██╔╝    
+   ███████║██╔██╗ ██║██║   ██║██╔████╔██║███████║██║      ╚████╔╝     
+   ██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║       ╚██╔╝      
+   ██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║███████╗   ██║       
+   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝      
+         ███████╗██╗  ██╗██████╗ ██╗      █████╗ ██╗███╗   ██╗███████╗██████╗ 
+         ██╔════╝╚██╗██╔╝██╔══██╗██║     ██╔══██╗██║████╗  ██║██╔════╝██╔══██╗
+         █████╗   ╚███╔╝ ██████╔╝██║     ███████║██║██╔██╗ ██║█████╗  ██████╔╝
+         ██╔══╝   ██╔██╗ ██╔═══╝ ██║     ██╔══██║██║██║╚██╗██║██╔══╝  ██╔══██╗
+         ███████╗██╔╝ ██╗██║     ███████╗██║  ██║██║██║ ╚████║███████╗██║  ██║
+         ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+```
+
 # 🔍 Log File Anomaly Explainer
 
-> **AI-powered log analysis tool that detects errors in log files and generates structured, actionable Markdown reports — powered by Groq (llama-3.3-70b-versatile, free tier).**
+> **An AI-powered log analysis engine that detects critical errors, traces root causes, and delivers structured Markdown reports — in seconds.**
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Groq](https://img.shields.io/badge/Groq-LLaMA%203.3%2070B-F55036?style=for-the-badge&logo=groq&logoColor=white)](https://console.groq.com)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Web%20UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![SQLite](https://img.shields.io/badge/SQLite-History%20DB-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
+[![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
+[![Team](https://img.shields.io/badge/Team-PS--02-8B5CF6?style=for-the-badge)](#-meet-the-team)
+
+</div>
 
 ---
 
-## Table of Contents
+## 🗺️ Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Architecture & Data Flow](#architecture--data-flow)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Streamlit Web UI](#streamlit-web-ui)
-  - [CLI (Command Line)](#cli-command-line)
-- [CLI Options](#cli-options)
-- [Configuration](#configuration)
-- [How It Works](#how-it-works)
-- [Supported Log Formats](#supported-log-formats)
-- [Output Report Structure](#output-report-structure)
-- [Running Tests](#running-tests)
-- [Dependencies](#dependencies)
-- [Troubleshooting](#troubleshooting)
+- [Overview](#-overview)
+- [Architecture & Data Flow](#-architecture--data-flow)
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [CLI Options](#-cli-options)
+- [Configuration](#-configuration)
+- [How It Works](#-how-it-works)
+- [Supported Log Formats](#-supported-log-formats)
+- [Output Report Structure](#-output-report-structure)
+- [Running Tests](#-running-tests)
+- [Dependencies](#-dependencies)
+- [Troubleshooting](#-troubleshooting)
+- [Meet the Team](#-meet-the-team)
 
 ---
 
-## Overview
+## 🧠 Overview
 
-**Log File Anomaly Explainer** takes a raw application log file, automatically finds the first critical error or anomaly, and uses the **Groq API** (free tier — `llama-3.3-70b-versatile`) to produce a clear, structured explanation — complete with root cause analysis, a suggested fix, and prevention advice.
+**Log File Anomaly Explainer** is an intelligent log analysis pipeline that transforms raw, noisy application logs into clear, actionable insights. Drop in any `.log` or `.txt` file — the system finds the first critical anomaly, queries the **Groq LLM API** (free tier — `llama-3.3-70b-versatile`), and returns a five-section structured explanation covering root cause, what went wrong, and how to fix and prevent it.
 
-Two interfaces are provided:
+Two battle-tested interfaces are available:
 
-| Interface | Description |
+| Interface | File | Best For |
+|---|---|---|
+| 🌐 **Streamlit Web UI** | `Project/app.py` | Visual analysis, upload history, report downloads |
+| ⚡ **CLI Pipeline** | `Project/backend/main.py` | Scripting, automation, on-call workflows |
+
+---
+
+## 🏗️ Architecture & Data Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                          👤  USER                                    │
+│               (Browser Upload  ──or──  CLI Terminal)                 │
+└─────────────────────────────┬───────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                    🖥️  STREAMLIT UI  (app.py)                        │
+│          File upload · Model selector · Context config               │
+│          History search · Report download · SQLite viewer            │
+└─────────────────────────────┬───────────────────────────────────────┘
+                              │  Raw .log / .txt file
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                   🔎  LOG PARSER  (log_parser.py)                    │
+│   Regex scan for ERROR · CRITICAL · FATAL · Exception · Traceback    │
+│   Timestamp extraction · Context window · Severity classification    │
+└─────────────────────────────┬───────────────────────────────────────┘
+                              │  log_context { dict }
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                  🚨  ERROR DETECTION ENGINE                          │
+│          First anomaly block · Traceback extraction                  │
+│          Context lines before & after · Severity badge               │
+└─────────────────────────────┬───────────────────────────────────────┘
+                              │  Structured error payload
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              🤖  GROQ / OLLAMA LLM  (llm_explainer.py)              │
+│   System + User prompt engineering · llama-3.3-70b-versatile        │
+│   Retry logic · Exponential backoff · Rate-limit handling            │
+│   Fallback: rule-based mock analysis if API unavailable              │
+└─────────────────────────────┬───────────────────────────────────────┘
+                              │  explanation { 5 sections }
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              📝  MARKDOWN REPORT  (report_generator.py)              │
+│   Summary · Root Cause · Why It Happened · Fix · Prevention          │
+│   Severity badge · Metadata table · Raw error block · LLM dump      │
+└─────────────────────────────┬───────────────────────────────────────┘
+                              │  anomaly_report.md
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                   🗄️  SQLITE HISTORY  (database.db)                  │
+│         Persistent analysis log · Searchable · Timestamped          │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ✨ Features
+
+| Feature | Description |
 |---|---|
-| **Streamlit Web UI** (`Project/app.py`) | Browser-based UI with file upload, history database, and downloadable reports |
-| **CLI** (`Project/backend/main.py`) | Terminal pipeline — great for scripting and on-call workflows |
+| 🔍 **Anomaly Detection** | Regex scanner for `ERROR`, `CRITICAL`, `FATAL`, `Exception`, `Traceback`, `SEVERE`, `EMERGENCY` |
+| 🕐 **Timestamp Parsing** | Python logging, ISO-8601, Apache/nginx, syslog formats |
+| 📋 **Context Extraction** | Configurable lines of context before and after the error trigger |
+| 🤖 **AI Explanation** | Five structured sections via Groq API — Summary, Root Cause, Why, Fix, Prevention |
+| 🔄 **Retry Logic** | Exponential backoff on connection/timeout; 30s wait on rate-limit errors |
+| 🛡️ **Graceful Fallback** | Rule-based mock analysis when API is unavailable — full report still generated |
+| 🗄️ **Analysis History** | SQLite-backed history with search in the Streamlit UI |
+| 🖥️ **Rich Terminal** | Colour-coded panels and AI summary for CLI use via `rich` |
+| ⏭️ **`--no-llm` Mode** | Parse and report without any API call — pure regex output |
 
 ---
 
-## Features
-
-- **Automatic anomaly detection** — regex scanner supports `ERROR`, `CRITICAL`, `FATAL`, `Exception`, `Traceback`, `SEVERE`, `EMERGENCY`
-- **Timestamp parsing** — Python logging, ISO-8601, Apache/nginx, syslog formats
-- **Context extraction** — configurable lines of context around the error
-- **AI-powered explanation** — five structured sections via Groq API: Summary, Root Cause, Why It Happened, Suggested Fix, Prevention
-- **Graceful fallback** — if API is unavailable, a rule-based mock analysis is shown and the full report is still generated and downloadable
-- **Retry logic** — automatic retry with exponential backoff on connection/timeout errors; rate-limit errors wait 30 s before retry
-- **Streamlit history** — SQLite-backed analysis history with search
-- **Rich terminal output** — colour-coded panels and AI summary for CLI use
-- **`--no-llm` / Skip LLM mode** — parse and report without any API call
-
----
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 log-file-anomaly-explainer/
-├── requirements.txt                # Python dependencies (root)
+├── requirements.txt                # Root Python dependencies
 ├── render.yaml                     # Render deployment config
-├── README.md                       # Root README
+├── README.md                       # This file
 │
 └── Project/
-    ├── app.py                      # Streamlit web application
-    ├── requirements.txt            # Python dependencies (Project)
+    ├── app.py                      # 🌐 Streamlit web application
+    ├── requirements.txt            # Project-level dependencies
     ├── .env.example                # Environment variable template
-    ├── database.db                 # SQLite history DB
+    ├── database.db                 # 🗄️ SQLite history database (runtime)
     │
     └── backend/
         ├── __init__.py
-        ├── main.py                 # CLI entry point (Typer + Rich)
-        ├── log_parser.py           # Log file parser & error-block extractor
-        ├── llm_explainer.py        # Groq LLM client & prompt logic
-        ├── report_generator.py     # Markdown report formatter & writer
+        ├── main.py                 # ⚡ CLI entry point (Typer + Rich)
+        ├── log_parser.py           # 🔎 Log file parser & error-block extractor
+        ├── llm_explainer.py        # 🤖 Groq LLM client & prompt engineering
+        ├── report_generator.py     # 📝 Markdown report formatter & writer
         │
         ├── services/
         │   ├── __init__.py
@@ -83,45 +170,20 @@ log-file-anomaly-explainer/
             └── test_log_parser.py  # Unit tests for the log parser
 ```
 
-> `uploads/`, `reports/`, and `database.db` are created at runtime and excluded from version control.
+> `uploads/`, `reports/`, and `database.db` are auto-created at runtime and excluded from version control.
 
 ---
 
-## Architecture & Data Flow
-
-```
-Log File (.log)
-      │
-      ▼
-┌─────────────────┐
-│  log_parser.py  │  regex scan → finds first error block + context lines
-└────────┬────────┘
-         │  log_context (dict)
-         ▼
-┌──────────────────────┐
-│  llm_explainer.py    │  builds prompt → calls Groq API → parses 5-section response
-└──────────┬───────────┘
-           │  explanation (dict)
-           ▼
-┌───────────────────────┐
-│  report_generator.py  │  renders Markdown report → writes to disk
-└───────────────────────┘
-```
-
----
-
-## Prerequisites
+## 📋 Prerequisites
 
 | Requirement | Notes |
 |---|---|
-| Python 3.10+ | Tested on 3.11 |
-| Groq API key | Free at [console.groq.com](https://console.groq.com) |
-
-No local model or GPU needed — Groq runs the model in the cloud for free.
+| **Python 3.10+** | Tested on 3.11 |
+| **Groq API Key** | Free at [console.groq.com](https://console.groq.com) — no GPU, no local model needed |
 
 ---
 
-## Installation
+## 🚀 Installation
 
 ```bash
 # 1. Clone the repository
@@ -140,14 +202,14 @@ source venv/bin/activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Set up your API key
+# 4. Configure your API key
 cp Project/.env.example Project/.env
-# Open Project/.env and set: GROQ_API_KEY=gsk_your_key_here
+# Open Project/.env and set:  GROQ_API_KEY=gsk_your_key_here
 ```
 
 ---
 
-## Usage
+## 🖥️ Usage
 
 ### Streamlit Web UI
 
@@ -158,16 +220,17 @@ streamlit run Project/app.py
 Open `http://localhost:8501` in your browser.
 
 **Workflow:**
+
 1. Upload a `.log` or `.txt` file
 2. Choose the Groq model (default: `llama-3.3-70b-versatile`)
 3. Adjust context lines if needed
-4. Click **🚀 Analyze** — the app parses, calls the API, and shows a structured explanation
-5. Download the Markdown report
+4. Click **🚀 Analyze** — the app parses, calls the API, and renders a structured explanation
+5. Download the Markdown report or browse history
 
 ### CLI (Command Line)
 
 ```bash
-# Full pipeline with AI explanation
+# Full pipeline — AI-powered analysis
 python Project/backend/main.py Project/large_sample.log
 
 # Parse only — no API call
@@ -185,7 +248,7 @@ python Project/backend/main.py Project/large_sample.log --auto-open
 
 ---
 
-## CLI Options
+## ⚙️ CLI Options
 
 | Option | Default | Description |
 |---|---|---|
@@ -198,43 +261,44 @@ python Project/backend/main.py Project/large_sample.log --auto-open
 
 ---
 
-## Configuration
+## 🔧 Configuration
 
-Set `GROQ_API_KEY` in your `Project/.env` file (local) or in your Render service environment (production). No other configuration is required.
+Set `GROQ_API_KEY` in `Project/.env` (local) or in your Render service environment (production). No other configuration is required.
 
-**Available Groq models (free tier):**
+**Available Groq Models (Free Tier):**
 
-| Model | Context | Best for |
+| Model | Context | Best For |
 |---|---|---|
-| `llama-3.3-70b-versatile` | 128k | Best quality (default) |
+| `llama-3.3-70b-versatile` | 128k | Best quality — default |
 | `llama-3.1-8b-instant` | 128k | Fastest responses |
-| `mixtral-8x7b-32768` | 32k | Good balance |
+| `mixtral-8x7b-32768` | 32k | Good quality/speed balance |
 
 ---
 
-## How It Works
+## 🔬 How It Works
 
-### 1. Log Parsing (`log_parser.py`)
+### 1. Log Parsing — `log_parser.py`
 
 Scans line-by-line for the first occurrence of `ERROR`, `CRITICAL`, `FATAL`, `Exception`, `Traceback`, `SEVERE`, or `EMERGENCY`. Captures:
+
 - Configurable context lines before the trigger
 - The full traceback (consecutive indented / continuation lines)
-- Timestamp (Python logging, ISO-8601, Apache, syslog)
-- Severity (`ERROR`, `CRITICAL`, or `UNKNOWN`)
+- Timestamp parsed from Python logging, ISO-8601, Apache, or syslog format
+- Severity classification (`ERROR`, `CRITICAL`, or `UNKNOWN`)
 
-### 2. LLM Explanation (`llm_explainer.py`)
+### 2. LLM Explanation — `llm_explainer.py`
 
-Builds a two-part prompt (system + user), calls the Groq API via `llm_client.py`, and parses the response into five sections: Summary, Root Cause, Why It Happened, Suggested Fix, Prevention. Falls back to a rule-based mock if the API is unavailable.
+Builds a two-part prompt (system + user), calls the Groq API via `llm_client.py`, and parses the response into five structured sections: **Summary**, **Root Cause**, **Why It Happened**, **Suggested Fix**, **Prevention**. Falls back to a rule-based mock if the API is unavailable.
 
-### 3. Report Generation (`report_generator.py`)
+### 3. Report Generation — `report_generator.py`
 
-Renders a polished Markdown document with severity badge, metadata table, raw error block, all five AI sections, and a collapsible raw LLM response.
+Renders a polished Markdown document with a severity badge, metadata table, raw error block, all five AI sections, and a collapsible raw LLM response section.
 
 ---
 
-## Supported Log Formats
+## 📂 Supported Log Formats
 
-| Format | Example |
+| Format | Example Timestamp |
 |---|---|
 | Python `logging` | `2024-01-15 10:00:35,123` |
 | ISO-8601 / JSON | `2024-01-15T10:00:35.123Z` |
@@ -243,32 +307,36 @@ Renders a polished Markdown document with severity badge, metadata table, raw er
 
 ---
 
-## Output Report Structure
+## 📄 Output Report Structure
 
 ```markdown
 # 🔍 Log Anomaly Report
 
-| Field | Value |
-|---|---|
-| File | app.log |
-| Severity | 🟠 ERROR |
-| Timestamp | 2024-01-15 10:00:35 |
-| LLM model | llama-3.3-70b-versatile |
+| Field     | Value                        |
+|-----------|------------------------------|
+| File      | app.log                      |
+| Severity  | 🟠 ERROR                     |
+| Timestamp | 2024-01-15 10:00:35          |
+| LLM Model | llama-3.3-70b-versatile      |
 
 ## 🤖 AI Analysis
-### 📋 Summary ...
-### 🎯 Root Cause ...
-### 🔎 Why It Happened ...
-### 🛠️ Suggested Fix ...
-### 🛡️ Prevention ...
+### 📋 Summary
+### 🎯 Root Cause
+### 🔎 Why It Happened
+### 🛠️ Suggested Fix
+### 🛡️ Prevention
 
 ## 🚨 Raw Error Block
+<error traceback here>
+
+<details><summary>🔩 Raw LLM Response</summary>
 ...
+</details>
 ```
 
 ---
 
-## Running Tests
+## 🧪 Running Tests
 
 ```bash
 cd Project/backend
@@ -277,28 +345,28 @@ python -m pytest examples/test_log_parser.py -v
 
 ---
 
-## Dependencies
+## 📦 Dependencies
 
 | Package | Purpose |
 |---|---|
-| `streamlit` | Web UI |
-| `pandas` | Analysis history table |
-| `openai` | Groq API client (OpenAI-compatible) |
+| `streamlit` | Web UI framework |
+| `pandas` | Analysis history table rendering |
+| `openai` | Groq API client (OpenAI-compatible interface) |
 | `python-dotenv` | `.env` file loading |
 | `typer` | CLI framework |
 | `rich` | Colour terminal output |
 
 ---
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 | Problem | Solution |
 |---|---|
 | `GROQ_API_KEY` not set | Copy `.env.example` → `.env` and add your key from [console.groq.com](https://console.groq.com) |
-| 401 Authentication Failed | API key is invalid — regenerate at [console.groq.com](https://console.groq.com) |
-| 429 Rate Limit | Free tier has per-minute limits — wait 30 s and retry, or reduce context lines |
-| `ModuleNotFoundError: backend` | Run `streamlit run Project/app.py` from the project root, or add the project directory to your `PYTHONPATH`. |
-| No anomaly detected | Log has no `ERROR`/`CRITICAL`/`Exception` lines — verify the log content |
+| `401 Authentication Failed` | API key is invalid — regenerate at [console.groq.com](https://console.groq.com) |
+| `429 Rate Limit` | Free tier has per-minute limits — the tool auto-waits 30s; or reduce `--context-lines` |
+| `ModuleNotFoundError: backend` | Run from the project root: `streamlit run Project/app.py`, or add the project dir to `PYTHONPATH` |
+| No anomaly detected | Log has no `ERROR`/`CRITICAL`/`Exception` lines — verify the log content manually |
 
 ---
 
@@ -306,17 +374,64 @@ python -m pytest examples/test_log_parser.py -v
 
 <div align="center">
 
-Built with dedication by the **PS-02** team.
+### Built with dedication by Team **PS-02**
 
-| Name | Resume |
-|:---:|:---:|
-| **Manikandan S** | [📄 View Resume](https://drive.google.com/file/d/1CFXQHCqRVmPZ2YCqzz5ihNIA5qzeYRSm/view?usp=drivesdk) |
-| **Nithish S** | [📄 View Resume](https://drive.google.com/file/d/1M-amjnNReqQJ-C3_4zqmUuQLKIozQDU2/view?usp=drive_link) |
-| **Kadhir K G** | [📄 View Resume](https://drive.google.com/file/d/1dV_-uQDYHrpxE9w7PoQqBRiLikPooEcL/view?usp=sharing) |
-| **Nideeshkumar A** | [📄 View Resume](https://drive.google.com/file/d/1WppEEQpHdCzqWF_PyzJjFfU4PIuooOCH/view?usp=sharing) |
+*Python · Groq · Streamlit · Typer · Rich · SQLite*
 
-<br>
+---
 
-*Built with Python · Groq · Streamlit · Typer · Rich*
+<table>
+  <tr>
+    <td align="center" width="220">
+      <br>
+      <b>🧠 Kadhir K G</b><br>
+      <sub><b>AI &amp; Project Lead</b></sub><br><br>
+      <sub>Architecture design · LLM integration<br>Prompt engineering · Project direction</sub><br><br>
+      <a href="https://drive.google.com/file/d/1dV_-uQDYHrpxE9w7PoQqBRiLikPooEcL/view?usp=sharing">📄 View Resume</a><br>
+      <a href="mailto:kadhir@example.com">✉️ kadhir@example.com</a>
+    </td>
+    <td align="center" width="220">
+      <br>
+      <b>⚙️ Nithish S</b><br>
+      <sub><b>Backend Developer</b></sub><br><br>
+      <sub>Log parser · LLM explainer<br>API retry logic · CLI pipeline</sub><br><br>
+      <a href="https://drive.google.com/file/d/1M-amjnNReqQJ-C3_4zqmUuQLKIozQDU2/view?usp=drive_link">📄 View Resume</a><br>
+      <a href="mailto:nithish@example.com">✉️ nithish@example.com</a>
+    </td>
+    <td align="center" width="220">
+      <br>
+      <b>🎨 Nideesh Kumar A</b><br>
+      <sub><b>Frontend Developer</b></sub><br><br>
+      <sub>Streamlit UI · Report rendering<br>UX design · File upload flows</sub><br><br>
+      <a href="https://drive.google.com/file/d/1WppEEQpHdCzqWF_PyzJjFfU4PIuooOCH/view?usp=sharing">📄 View Resume</a><br>
+      <a href="mailto:nideesh@example.com">✉️ nideesh@example.com</a>
+    </td>
+    <td align="center" width="220">
+      <br>
+      <b>🗄️ Manikandan S</b><br>
+      <sub><b>Database Engineer</b></sub><br><br>
+      <sub>SQLite history DB · Schema design<br>Query optimization · Data persistence</sub><br><br>
+      <a href="https://drive.google.com/file/d/1CFXQHCqRVmPZ2YCqzz5ihNIA5qzeYRSm/view?usp=drivesdk">📄 View Resume</a><br>
+      <a href="mailto:manikandan@example.com">✉️ manikandan@example.com</a>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 📬 Contact the Team
+
+> Have a question, found a bug, or want to collaborate? Reach out directly:
+
+| Name | Role | Email |
+|:---:|:---:|:---:|
+| Kadhir K G | AI & Project Lead | [kadhir@example.com](mailto:kadhir@example.com) |
+| Nithish S | Backend Developer | [nithish@example.com](mailto:nithish@example.com) |
+| Nideesh Kumar A | Frontend Developer | [nideesh@example.com](mailto:nideesh@example.com) |
+| Manikandan S | Database Engineer | [manikandan@example.com](mailto:manikandan@example.com) |
+
+---
+
+*© 2024 Team PS-02 · Made with ❤️ and a lot of log files*
 
 </div>
