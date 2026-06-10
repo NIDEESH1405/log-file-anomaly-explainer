@@ -1,26 +1,25 @@
-
 <div align="center">
 
-```
+<pre>
 ██╗      ██████╗  ██████╗     ███████╗██╗██╗     ███████╗
 ██║     ██╔═══██╗██╔════╝     ██╔════╝██║██║     ██╔════╝
 ██║     ██║   ██║██║  ███╗    █████╗  ██║██║     █████╗  
 ██║     ██║   ██║██║   ██║    ██╔══╝  ██║██║     ██╔══╝  
 ███████╗╚██████╔╝╚██████╔╝    ██║     ██║███████╗███████╗
 ╚══════╝ ╚═════╝  ╚═════╝     ╚═╝     ╚═╝╚══════╝╚══════╝
-    █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ██╗     ██╗   ██╗    
-   ██╔══██╗████╗  ██║██╔═══██╗████╗ ████║██╔══██╗██║     ╚██╗ ██╔╝    
-   ███████║██╔██╗ ██║██║   ██║██╔████╔██║███████║██║      ╚████╔╝     
-   ██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║       ╚██╔╝      
-   ██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║███████╗   ██║       
-   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝      
-         ███████╗██╗  ██╗██████╗ ██╗      █████╗ ██╗███╗   ██╗███████╗██████╗ 
-         ██╔════╝╚██╗██╔╝██╔══██╗██║     ██╔══██╗██║████╗  ██║██╔════╝██╔══██╗
-         █████╗   ╚███╔╝ ██████╔╝██║     ███████║██║██╔██╗ ██║█████╗  ██████╔╝
-         ██╔══╝   ██╔██╗ ██╔═══╝ ██║     ██╔══██║██║██║╚██╗██║██╔══╝  ██╔══██╗
-         ███████╗██╔╝ ██╗██║     ███████╗██║  ██║██║██║ ╚████║███████╗██║  ██║
-         ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
-```
+ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ██╗     ██╗   ██╗
+██╔══██╗████╗  ██║██╔═══██╗████╗ ████║██╔══██╗██║     ╚██╗ ██╔╝
+███████║██╔██╗ ██║██║   ██║██╔████╔██║███████║██║      ╚████╔╝ 
+██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║       ╚██╔╝  
+██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║███████╗   ██║   
+╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝  
+███████╗██╗  ██╗██████╗ ██╗      █████╗ ██╗███╗   ██╗███████╗██████╗ 
+██╔════╝╚██╗██╔╝██╔══██╗██║     ██╔══██╗██║████╗  ██║██╔════╝██╔══██╗
+█████╗   ╚███╔╝ ██████╔╝██║     ███████║██║██╔██╗ ██║█████╗  ██████╔╝
+██╔══╝   ██╔██╗ ██╔═══╝ ██║     ██╔══██║██║██║╚██╗██║██╔══╝  ██╔══██╗
+███████╗██╔╝ ██╗██║     ███████╗██║  ██║██║██║ ╚████║███████╗██║  ██║
+╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+</pre>
 
 # 🔍 Log File Anomaly Explainer
 
@@ -388,7 +387,7 @@ python -m pytest examples/test_log_parser.py -v
       <sub><b>AI &amp; Project Lead</b></sub><br><br>
       <sub>Architecture design · LLM integration<br>Prompt engineering · Project direction</sub><br><br>
       <a href="https://drive.google.com/file/d/1dV_-uQDYHrpxE9w7PoQqBRiLikPooEcL/view?usp=sharing">📄 View Resume</a><br>
-      <a href="mailto:kadhir@example.com">✉️ kadhir@example.com</a>
+      <a href="mailto:kadhirkg@gmail.com">✉️ kadhirkg@gmail.com</a>
     </td>
     <td align="center" width="220">
       <br>
@@ -396,7 +395,7 @@ python -m pytest examples/test_log_parser.py -v
       <sub><b>Backend Developer</b></sub><br><br>
       <sub>Log parser · LLM explainer<br>API retry logic · CLI pipeline</sub><br><br>
       <a href="https://drive.google.com/file/d/1M-amjnNReqQJ-C3_4zqmUuQLKIozQDU2/view?usp=drive_link">📄 View Resume</a><br>
-      <a href="mailto:nithish@example.com">✉️ nithish@example.com</a>
+      <a href="mailto:nithishsivasamy07@gmail.com">✉️ nithishsivasamy07@gmail.com</a>
     </td>
     <td align="center" width="220">
       <br>
@@ -404,7 +403,7 @@ python -m pytest examples/test_log_parser.py -v
       <sub><b>Frontend Developer</b></sub><br><br>
       <sub>Streamlit UI · Report rendering<br>UX design · File upload flows</sub><br><br>
       <a href="https://drive.google.com/file/d/1WppEEQpHdCzqWF_PyzJjFfU4PIuooOCH/view?usp=sharing">📄 View Resume</a><br>
-      <a href="mailto:nideesh@example.com">✉️ nideesh@example.com</a>
+      <a href="mailto:nideesharumugam2006@gmail.com">✉️ nideesharumugam2006@gmail.com</a>
     </td>
     <td align="center" width="220">
       <br>
@@ -412,23 +411,25 @@ python -m pytest examples/test_log_parser.py -v
       <sub><b>Database Engineer</b></sub><br><br>
       <sub>SQLite history DB · Schema design<br>Query optimization · Data persistence</sub><br><br>
       <a href="https://drive.google.com/file/d/1CFXQHCqRVmPZ2YCqzz5ihNIA5qzeYRSm/view?usp=drivesdk">📄 View Resume</a><br>
-      <a href="mailto:manikandan@example.com">✉️ manikandan@example.com</a>
+      <a href="mailto:mani1524.senthil@gmail.com">✉️ mani1524.senthil@gmail.com</a>
     </td>
   </tr>
 </table>
 
 ---
 
-### 📬 Contact the Team
+### 📬 Get in Touch
 
-> Have a question, found a bug, or want to collaborate? Reach out directly:
+We appreciate your interest in the **Log File Anomaly Explainer** project. Whether you have questions, suggestions, feature requests, or collaboration opportunities, our team would be happy to connect.
 
-| Name | Role | Email |
-|:---:|:---:|:---:|
-| Kadhir K G | AI & Project Lead | [kadhir@example.com](mailto:kadhir@example.com) |
-| Nithish S | Backend Developer | [nithish@example.com](mailto:nithish@example.com) |
-| Nideesh Kumar A | Frontend Developer | [nideesh@example.com](mailto:nideesh@example.com) |
-| Manikandan S | Database Engineer | [manikandan@example.com](mailto:manikandan@example.com) |
+**Project Team Contacts**
+
+* **Kadhir K G** — [kadhirkg@gmail.com](mailto:kadhirkg@gmail.com)
+* **Nithish S** — [nithishsivasamy07@gmail.com](mailto:nithishsivasamy07@gmail.com)
+* **Nideesh A** — [nideesharumugam2006@gmail.com](mailto:nideesharumugam2006@gmail.com)
+* **Mani S** — [mani1524.senthil@gmail.com](mailto:mani1524.senthil@gmail.com)
+
+Thank you for exploring our project. We look forward to your feedback and collaboration opportunities.
 
 ---
 
